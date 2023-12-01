@@ -1,8 +1,27 @@
 import { Text, Image, StyleSheet, Dimensions, View } from "react-native";
 import topo from "../../assets/topo.png";
-import jenny from "../../assets/logo.png"
+import jenny from "../../assets/logo.png";
+import {
+  useFonts,
+  BalsamiqSans_400Regular,
+  BalsamiqSans_400Regular_Italic,
+  BalsamiqSans_700Bold,
+  BalsamiqSans_700Bold_Italic,
+} from '@expo-google-fonts/balsamiq-sans';
 
 export function Cesta() {
+
+  let [fontsLoaded] = useFonts({
+    BalsamiqSans_400Regular,
+    BalsamiqSans_400Regular_Italic,
+    BalsamiqSans_700Bold,
+    BalsamiqSans_700Bold_Italic,
+  });
+
+  if (!fontsLoaded) {
+    return null;
+  }
+
   return (
     <>
       <Image source={topo} style={estilos.topo}></Image>
@@ -12,7 +31,7 @@ export function Cesta() {
         <Text style={estilos.titulo2}>Cesta de verduras</Text>
         <View style={estilos.conteinerJenny}>
             <Image source={jenny} style={estilos.imagemFazenda}></Image>
-            <Text style={estilos.titulo3}>Jenny Jack farm</Text>
+            <Text style={estilos.titulo3}>Fazenda Arantes</Text>
         </View>
         <Text style={estilos.descricao}>
           Uma cesta de produtos selecionados cuidadosamente da fazenda direto
@@ -54,6 +73,7 @@ const estilos = StyleSheet.create({
   titulo3:{
     lineHeight:26,
     fontSize: 16,
+    fontFamily: 'BalsamiqSans_700Bold'
   },
   descricao:{
     color: '#a3a3a3',
