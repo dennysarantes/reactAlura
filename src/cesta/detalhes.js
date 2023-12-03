@@ -1,10 +1,10 @@
 import { Text, StyleSheet, View, Image } from "react-native";
 import { TextoFontBalsamiq } from '../telas/componentes-shared/texto-balsamiq-bold.js'
 
-export default function DetalhesCesta({img, nomeFazenda, textoDestaque, valor}) {
+export default function DetalhesCesta({img, nomeFazenda, textoTopo, textoDestaque, valor}) {
     return (
         <View style={estilos.containerDetalhe}>
-        <Text style={estilos.titulo2}>Cesta de verduras</Text>
+        <Text style={estilos.titulo2}>{textoTopo}</Text>
         <View style={estilos.conteinerJenny}>
             <Image source={img} style={estilos.imagemFazenda}></Image>
             <TextoFontBalsamiq valor={nomeFazenda} estiloHerdado={estilos.titulo3}></TextoFontBalsamiq>

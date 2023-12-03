@@ -1,5 +1,5 @@
 import { useCallback } from 'react';
-import { StatusBar, SafeAreaView } from 'react-native';
+import { StatusBar, SafeAreaView, StyleSheet, ScrollView } from 'react-native';
 import { Cesta } from './src/cesta/cestas';
 import {
   useFonts,
@@ -33,19 +33,21 @@ export default function App() {
   }
 
   return (
-    <SafeAreaView onLayout={onLayoutRootView}>
+    <SafeAreaView 
+       onLayout={onLayoutRootView} style={styles.container}>
       <StatusBar></StatusBar>
       <Cesta mock={{...mock}}></Cesta>
+
     </SafeAreaView>
   );
 }
 
-/* const styles = StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex:1,
+    height: "100%", 
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    //alignItems: 'center',
+    //justifyContent: 'center',
   },
 });
- */
