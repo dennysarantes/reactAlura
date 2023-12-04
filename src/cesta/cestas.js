@@ -5,8 +5,11 @@ import { Pressable, View, Text, StyleSheet, SafeAreaView, SectionList } from "re
 import { Itens } from "./itens";
 import mockCesta from "../mock/mock-arquivo";
 import { TextoFontBalsamiq } from "../telas/componentes-shared/texto-balsamiq-bold";
+import  pack  from '../../package.json';
 
 export function Cesta({mock}) {
+
+  const version = pack?.version;
 
   comprarTeste = () => {
     alert('Comprar...')
@@ -39,6 +42,7 @@ export function Cesta({mock}) {
               return (
                 <>
                     <TopoCesta img={mock?.imgTopo} titulo={mock.topo.titulo} ></TopoCesta>
+                    <Text style={estilo.titulo}>{'v:' + version}</Text>
                     <DetalhesCesta 
                         img={mock.detalhes.logoFazenda}
                         nomeFazenda={mock.detalhes.nomeFazenda}
