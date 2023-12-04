@@ -1,5 +1,5 @@
 import { useCallback } from 'react';
-import { StatusBar, SafeAreaView, StyleSheet, ScrollView } from 'react-native';
+import { StatusBar, SafeAreaView, StyleSheet } from 'react-native';
 import { Cesta } from './src/cesta/cestas';
 import {
   useFonts,
@@ -45,9 +45,6 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex:1,
-    height: "100%", 
     backgroundColor: '#fff',
-    //alignItems: 'center',
-    //justifyContent: 'center',
   },
 });
